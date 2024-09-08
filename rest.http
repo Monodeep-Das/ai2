@@ -1,0 +1,6 @@
+POST http://127.0.0.1:8080/process-data/
+Content-Type: application/json
+
+{
+  "address": "Kashmiri-Gate-Metro-Station, Gokhale-Marg, Kashmere-Gate, Central-Delhi, Delhi, 110006, IND"
+}

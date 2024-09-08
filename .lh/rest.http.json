@@ -1,0 +1,86 @@
+{
+    "sourceFile": "rest.http",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1725603990917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725603998208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,5 @@\n POST http://127.0.0.1:8080/closest-addresses\n Content-Type: application/json\n+{\n+  \"address\": \"Buckingham Palace, London\"\n+}\n"
+                },
+                {
+                    "date": 1725604195291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,20 @@\n POST http://127.0.0.1:8080/closest-addresses\n Content-Type: application/json\n {\n-  \"address\": \"Buckingham Palace, London\"\n+  \"data\": [\n+    {\n+      \"recipient_id\": \"123\",\n+      \"preferred_time\": \"09:00\",\n+      \"delivery_date\": \"2024-09-07\",\n+      \"delivery_time\": \"10:00\",\n+      \"location\": {\n+        \"address\": \"221B Baker Street, London\"\n+      },\n+      \"day_of_week\": \"Monday\",\n+      \"special_event\": \"None\"\n+    }\n+  ],\n+  \"current_location\": {\n+    \"address\": \"Trafalgar Square, London\"\n+  }\n }\n"
+                },
+                {
+                    "date": 1725604413225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,21 @@\n POST http://127.0.0.1:8080/closest-addresses\n Content-Type: application/json\n+\n {\n-  \"data\": [\n-    {\n-      \"recipient_id\": \"123\",\n-      \"preferred_time\": \"09:00\",\n-      \"delivery_date\": \"2024-09-07\",\n-      \"delivery_time\": \"10:00\",\n-      \"location\": {\n-        \"address\": \"221B Baker Street, London\"\n-      },\n-      \"day_of_week\": \"Monday\",\n-      \"special_event\": \"None\"\n+    \"data\": [\n+        {\n+            \"recipient_id\": \"123\",\n+            \"preferred_time\": \"09:00\",\n+            \"delivery_date\": \"2024-09-07\",\n+            \"delivery_time\": \"10:00\",\n+            \"location\": {\n+                \"address\": \"221B Baker Street, London\"\n+            },\n+            \"day_of_week\": \"Monday\",\n+            \"special_event\": \"None\"\n+        }\n+    ],\n+    \"current_location\": {\n+        \"address\": \"Trafalgar Square, London\"\n     }\n-  ],\n-  \"current_location\": {\n-    \"address\": \"Trafalgar Square, London\"\n-  }\n }\n"
+                },
+                {
+                    "date": 1725604501029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n-POST http://127.0.0.1:8080/closest-addresses\n+POST http://127.0.0.1:8080/POST http://127.0.0.1:8080/process-data/\n+\n Content-Type: application/json\n \n {\n     \"data\": [\n"
+                },
+                {
+                    "date": 1725604509243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-POST http://127.0.0.1:8080/POST http://127.0.0.1:8080/process-data/\n+POST http://127.0.0.1:8080/process-data/\n \n Content-Type: application/json\n \n {\n"
+                },
+                {
+                    "date": 1725604980091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,21 +2,8 @@\n \n Content-Type: application/json\n \n {\n-    \"data\": [\n-        {\n-            \"recipient_id\": \"123\",\n-            \"preferred_time\": \"09:00\",\n-            \"delivery_date\": \"2024-09-07\",\n-            \"delivery_time\": \"10:00\",\n-            \"location\": {\n-                \"address\": \"221B Baker Street, London\"\n-            },\n-            \"day_of_week\": \"Monday\",\n-            \"special_event\": \"None\"\n-        }\n-    ],\n     \"current_location\": {\n-        \"address\": \"Trafalgar Square, London\"\n+        \"address\": \"Connaught Place, New Delhi, Delhi\"\n     }\n }\n"
+                },
+                {
+                    "date": 1725605155243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,5 @@\n POST http://127.0.0.1:8080/process-data/\n \n Content-Type: application/json\n \n-{\n-    \"current_location\": {\n-        \"address\": \"Connaught Place, New Delhi, Delhi\"\n-    }\n-}\n+{\"address\": \"Connaught Place, New Delhi, Delhi\"}\n"
+                },
+                {
+                    "date": 1725605259612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n POST http://127.0.0.1:8080/process-data/\n-\n Content-Type: application/json\n \n-{\"address\": \"Connaught Place, New Delhi, Delhi\"}\n+{\n+    \"address\": \"Connaught Place, New Delhi, Delhi\"\n+}\n"
+                },
+                {
+                    "date": 1725606358457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n POST http://127.0.0.1:8080/process-data/\n Content-Type: application/json\n \n {\n-    \"address\": \"Connaught Place, New Delhi, Delhi\"\n+  \"address\": \"Connaught Place, New Delhi, Delhi\"\n }\n"
+                },
+                {
+                    "date": 1725606936957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-POST http://127.0.0.1:8080/process-data/\n+POST http://127.0.0.1:8070/process-data/\n Content-Type: application/json\n \n {\n   \"address\": \"Connaught Place, New Delhi, Delhi\"\n"
+                },
+                {
+                    "date": 1725607087838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-POST http://127.0.0.1:8070/process-data/\n+POST http://127.0.0.1:8080/process-data/\n Content-Type: application/json\n \n {\n   \"address\": \"Connaught Place, New Delhi, Delhi\"\n"
+                },
+                {
+                    "date": 1725607145996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n POST http://127.0.0.1:8080/process-data/\n Content-Type: application/json\n \n {\n-  \"address\": \"Connaught Place, New Delhi, Delhi\"\n+  \"address\": \", New Delhi, Delhi\"\n }\n"
+                },
+                {
+                    "date": 1725607151176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n POST http://127.0.0.1:8080/process-data/\n Content-Type: application/json\n \n {\n-  \"address\": \", New Delhi, Delhi\"\n+  \"address\": \"Kashmiri , New Delhi, Delhi\"\n }\n"
+                },
+                {
+                    "date": 1725607547154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n POST http://127.0.0.1:8080/process-data/\n Content-Type: application/json\n \n {\n-  \"address\": \"Kashmiri , New Delhi, Delhi\"\n+  \"address\": \"Victoria Memorial, Kolkata, West Bengal\"\n }\n"
+                },
+                {
+                    "date": 1725607608342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n POST http://127.0.0.1:8080/process-data/\n Content-Type: application/json\n \n {\n-  \"address\": \"Victoria Memorial, Kolkata, West Bengal\"\n+  \"address\": \"Rumi Darwaza, Lucknow, Uttar Pradesh\"\n }\n"
+                },
+                {
+                    "date": 1725607638052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n POST http://127.0.0.1:8080/process-data/\n Content-Type: application/json\n \n {\n-  \"address\": \"Rumi Darwaza, Lucknow, Uttar Pradesh\"\n+  \"address\": \"Victoria Memorial, Kolkata, West Bengal\"\n }\n"
+                },
+                {
+                    "date": 1725607807233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n POST http://127.0.0.1:8080/process-data/\n Content-Type: application/json\n \n {\n-  \"address\": \"Victoria Memorial, Kolkata, West Bengal\"\n+  \"address\": \"Kashmiri-Gate-Metro-Station, Gokhale-Marg, Kashmere-Gate, Central-Delhi, Delhi, 110006, IND\"\n }\n"
+                }
+            ],
+            "date": 1725603990917,
+            "name": "Commit-0",
+            "content": "POST http://127.0.0.1:8080/closest-addresses\nContent-Type: application/json\n"
+        }
+    ]
+}
