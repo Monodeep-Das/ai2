@@ -1,5 +1,7 @@
 fastapi
 uvicorn
-geopy
 pydantic
 pandas
+opencage
+geopy
+jsonschema  # Needed to handle JSON processing and validation
